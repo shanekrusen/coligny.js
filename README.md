@@ -56,14 +56,14 @@ The colignyDate object is constructed with the same arguments as JavaScript's Da
 Using the 30-year Saturn cycle:
 
 ```javascript
-var example = new colignyDate(5017, "Rivros", 10)
+var example = new colignyDate(5017, "Rivros", 10);
 var newExample = example.toGregorianDate();
 ```
 
 Using the 19-year Metonic cycle:
 
 ```javascript
-var example = new colignyDate(5017, "Rivros", 10, true)
+var example = new colignyDate(5017, "Rivros", 10, true);
 var newExample = example.toGregorianDate();
 ```
 
