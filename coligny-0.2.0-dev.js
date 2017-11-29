@@ -158,15 +158,43 @@ function colignyYear(year, isMetonic) {
   } else {
     // Metonic Longcycle Equos Correction
     if (this.isEarly) {
-
+      if ((this.yearDiff > 60.97) &&
+         (this.yearDiff % 60.97 <= 19) &&
+         (this.yearDiff % 19 === 15))
+      {
+        for (var i = 0; i < this.months.length; i++) {
+          if (this.months[i].name === "Equos") {
+            this.months[i].days -= 1;
+          }
+        }
+      }
     } else {
-
+      if ((this.yearDiff > 60.97) &&
+         (this.yearDiff % 60.97 <= 19) &&
+         (this.yearDiff % 19 === 3))
+      {
+        for (var i = 0; i < this.months.length; i++) {
+          if (this.months[i].name === "Equos") {
+            this.months[i].days -= 1;
+          }
+        }
+      }
     }
     // Metonic Longcycle Rantaranos Correction
     if (this.isEarly) {
-
+      if ((this.yearDiff > 6568.62) &&
+         (this.yearDiff % 6568.62 <= 19) &&
+         (this.yearDiff % 19 === 1))
+      {
+        this.months.splice(6, 1);
+      }
     } else {
-
+      if ((this.yearDiff > 6568.62) &&
+         (this.yearDiff % 6568.62 <= 19) &&
+         (this.yearDiff % 19 === 17))
+      {
+        this.months.splice(6, 1);
+      }
     }
   } 
 }
@@ -266,12 +294,33 @@ colignyDate.prototype.toGregorianDate = function() {
       dayCount += 1;
     }
   }
-  
-  console.log(dayCount);
 
   var output = new Date(this.startDate.getTime());
   output.setDate(this.startDate.getDate() + dayCount);
   return output;
+}
+
+Date.prototype.toColignyDate = function(isMetonic) {
+  if (typeof isMetonic == "null") { isMetonic = false; }
+  if (isMetonic) {
+    var start = new Date(1999, 4, 22);
+    var endDate = new Date(this.getTime());
+    var timeDiff = Math.abs(endDate.getTime() - start.getTime());
+    var diff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+    startColig = new colignyDate(4999, "Samonios", 1, true);
+    startColig.calcDays(diff);
+    return startColig;
+  } else {
+    var start = new Date(1998, 4, 3);
+    var endDate = new Date(this.getTime());
+    var timeDiff = Math.abs(endDate.getTime() - start.getTime());
+    var diff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+    startColig = new colignyDate(4998, "Quimonios", 1);
+    startColig.calcDays(diff);
+    return startColig;
+  }
 }
 
 
