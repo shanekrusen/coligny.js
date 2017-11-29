@@ -1,5 +1,8 @@
 # coligny.js
 
+This JavaScript library is essentially a port of my Ruby gem, coligny.
+More information here: https://github.com/shanekrusen/coligny
+
 This library is intended to provide a JavaScript resource for the use of the Coligny Calendar, according to its alignment by Helen McKay. 
 
 ## To-DO
@@ -9,7 +12,16 @@ This library is intended to provide a JavaScript resource for the use of the Col
 
 ## Installation
 
-For usage, download the compressed version, denoted with the "-min" suffix.
+For usage:
+
+- Download the compressed version, denoted with the "-min" suffix
+
+or
+
+- Add this line to your HTML `<head>` tag:
+
+`<script type="text/javascript" src="https://raw.githubusercontent.com/shanekrusen/coligny.js/master/coligny-0.2.0-min.js"></script>`
+
 For development, download the readable version, denoted with the "-dev" suffix. 
 
 ## Usage
