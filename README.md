@@ -40,8 +40,8 @@ var newDate = date.toColignyDate;
 Using the 19-year Metonic Cycle:
 
 ```javascript
-example = new Date(2017, 6, 24)
-newExample = example.toColignyDate(true);
+var example = new Date(2017, 6, 24)
+var newExample = example.toColignyDate(true);
 ```
 
 To convert a Coligny Date to a Gregorian Date:
@@ -56,21 +56,21 @@ The colignyDate object is constructed with the same arguments as JavaScript's Da
 Using the 30-year Saturn cycle:
 
 ```javascript
-example = new colignyDate(5017, "Rivros", 10)
-newExample = example.toGregorianDate
+var example = new colignyDate(5017, "Rivros", 10)
+var newExample = example.toGregorianDate
 ```
 
 Using the 19-year Metonic cycle:
 
 ```javascript
-example = new colignyDate(5017, "Rivros", 10, true)
-newExample = example.toGregorianDate
+var example = new colignyDate(5017, "Rivros", 10, true)
+varnewExample = example.toGregorianDate
 ```
 
 Attributes for dates in the Coligny calendar can be accessed:
 
 ```javascript
-example = new ColignyDate(5017, "Rivros", 10)
+var example = new ColignyDate(5017, "Rivros", 10)
 example.year
 > 5017
 example.month.name
@@ -95,7 +95,7 @@ example.calcDays(-5)
 For the purpose of creating a calendar of the year, the ColignyYear class can be used.
 
 ```javascript
-example = new colignyYear(5017)
+var example = new colignyYear(5017)
 ```
 
 A ColignyYear class has the attribute "months" which is an array of instances of the ColignyMonths class:
