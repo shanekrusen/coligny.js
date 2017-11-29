@@ -5,7 +5,7 @@ More information here: https://github.com/shanekrusen/coligny
 
 This library is intended to provide a JavaScript resource for the use of the Coligny Calendar, according to its alignment by Helen McKay. 
 
-## To-DO
+## To-Do
 
 - Add Inscriptions for dates(?)
 - Comments
