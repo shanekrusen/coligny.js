@@ -64,7 +64,7 @@ Using the 19-year Metonic cycle:
 
 ```javascript
 var example = new colignyDate(5017, "Rivros", 10, true)
-varnewExample = example.toGregorianDate
+var newExample = example.toGregorianDate
 ```
 
 Attributes for dates in the Coligny calendar can be accessed:
