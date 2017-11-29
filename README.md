@@ -51,7 +51,7 @@ The colignyDate object is constructed with the same arguments as JavaScript's Da
 - The Coligny Months **must** be passed as strings. 
 - The method of counting years in the Coligny Calendar is:
 
-`(current gregorian year) + 3000`
+`(gregorian year) + 3000`
 
 Using the 30-year Saturn cycle:
 
