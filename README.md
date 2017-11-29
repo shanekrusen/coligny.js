@@ -34,13 +34,13 @@ Using the 30-year cycle of Saturn:
 
 ```javascript
 var date = new Date(2017, 6, 24);
-var newDate = date.toColignyDate;
+var newDate = date.toColignyDate();
 ```
 
 Using the 19-year Metonic Cycle:
 
 ```javascript
-var example = new Date(2017, 6, 24)
+var example = new Date(2017, 6, 24);
 var newExample = example.toColignyDate(true);
 ```
 
@@ -57,20 +57,20 @@ Using the 30-year Saturn cycle:
 
 ```javascript
 var example = new colignyDate(5017, "Rivros", 10)
-var newExample = example.toGregorianDate
+var newExample = example.toGregorianDate();
 ```
 
 Using the 19-year Metonic cycle:
 
 ```javascript
 var example = new colignyDate(5017, "Rivros", 10, true)
-var newExample = example.toGregorianDate
+var newExample = example.toGregorianDate();
 ```
 
 Attributes for dates in the Coligny calendar can be accessed:
 
 ```javascript
-var example = new ColignyDate(5017, "Rivros", 10)
+var example = new ColignyDate(5017, "Rivros", 10);
 example.year
 > 5017
 example.month.name
@@ -84,18 +84,18 @@ example.day
 Days can be added to a Coligny Date to find the resulting date:
 
 ```javascript
-example.calcDays(5)
+example.calcDays(5);
 ```
 or 
 
 ```javascript
-example.calcDays(-5)
+example.calcDays(-5);
 ```
 
 For the purpose of creating a calendar of the year, the ColignyYear class can be used.
 
 ```javascript
-var example = new colignyYear(5017)
+var example = new colignyYear(5017);
 ```
 
 A ColignyYear class has the attribute "months" which is an array of instances of the ColignyMonths class:
