@@ -20,7 +20,7 @@ or
 
 - Add this line to your HTML `<head>` tag:
 
-`<script type="text/javascript" src="https://raw.githubusercontent.com/shanekrusen/coligny.js/master/coligny-0.2.0-min.js"></script>`
+`<script type="text/javascript" src="https://raw.githubusercontent.com/shanekrusen/coligny.js/master/coligny-1.0.0-min.js"></script>`
 
 For development, download the readable version, denoted with the "-dev" suffix. 
 
@@ -79,6 +79,8 @@ example.month.days
 > 30
 example.day
 > 10
+example.inscription();
+> ["MD"]
 ```
 
 Days can be added to a Coligny Date to find the resulting date:
