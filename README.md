@@ -1,5 +1,7 @@
 # coligny.js
 
+!!THIS README IS NOW DEPRECATED!! I HAVE STARTED THIS PROJECT OVER FROM SCRATCH
+
 This JavaScript library is essentially a port of my Ruby gem, coligny.
 More information here: https://github.com/shanekrusen/coligny
 
