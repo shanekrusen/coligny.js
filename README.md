@@ -1,7 +1,5 @@
 # coligny.js
 
-!!THIS README IS NOW DEPRECATED!! I HAVE STARTED THIS PROJECT OVER FROM SCRATCH
-
 This JavaScript library is essentially a port of my Ruby gem, coligny.
 More information here: https://github.com/shanekrusen/coligny
 
@@ -9,22 +7,7 @@ This library is intended to provide a JavaScript resource for the use of the Col
 
 ## To-Do
 
-- Add Inscriptions for dates(?)
 - Comments
-
-## Installation
-
-For usage:
-
-- Download the compressed version, denoted with the "-min" suffix
-
-or
-
-- Add this line to your HTML `<head>` tag:
-
-`<script type="text/javascript" src="https://raw.githubusercontent.com/shanekrusen/coligny.js/master/coligny-1.0.0-min.js"></script>`
-
-For development, download the readable version, denoted with the "-dev" suffix. 
 
 ## Usage
 
@@ -48,9 +31,8 @@ var newExample = example.toColignyDate(true);
 
 To convert a Coligny Date to a Gregorian Date:
 
-The colignyDate object is constructed with the same arguments as JavaScript's Date object, i.e. (year, month, day), with two exceptions:
+The colignyDate object is constructed with the same arguments as JavaScript's Date object, i.e. (year, month, day), with one exception:
 
-- The Coligny Months **must** be passed as strings. 
 - The method of counting years in the Coligny Calendar is:
 
 `(gregorian year) + 3000`
@@ -58,25 +40,27 @@ The colignyDate object is constructed with the same arguments as JavaScript's Da
 Using the 30-year Saturn cycle:
 
 ```javascript
-var example = new colignyDate(5017, "Rivros", 10);
+var example = new colignyDate(5017, 2, 10);
 var newExample = example.toGregorianDate();
+>Tue Aug 08 2017 00:00:00 
 ```
 
 Using the 19-year Metonic cycle:
 
 ```javascript
-var example = new colignyDate(5017, "Rivros", 10, true);
+var example = new colignyDate(5017, 2, 10, true);
 var newExample = example.toGregorianDate();
+>Tue Aug 08 2017 00:00:00 
 ```
 
 Attributes for dates in the Coligny calendar can be accessed:
 
 ```javascript
-var example = new ColignyDate(5017, "Rivros", 10);
+var example = new ColignyDate(5017, 2, 10);
 example.year
 > 5017
 example.month.name
-> "Rivros"
+> "Riuros"
 example.month.days
 > 30
 example.day
@@ -94,6 +78,22 @@ or
 
 ```javascript
 example.calcDays(-5);
+```
+
+Coligny Dates can also be subtracted from one another to get the days between them.
+```javascript
+dateOne = new colignyDate(5017, 2, 10);
+dateTwo = new colignyDate(5017, 2, 30);
+dateOne.diff(dateTwo);
+> 20
+dateTwo.diff(dateOne);
+> 20
+```
+
+They can also be tested for equality.
+```javascript
+dateOne.equals(dateTwo);
+> false
 ```
 
 For the purpose of creating a calendar of the year, the ColignyYear class can be used.
