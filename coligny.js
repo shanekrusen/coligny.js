@@ -2154,7 +2154,8 @@ colignyDate.prototype.toGregorianDate = function() {
 }
 
 Date.prototype.toColignyDate = function(metonic) {
-  var out = new Date(this).setHours(0,0,0,0);
+  var out = new Date(this)
+  out.setHours(0,0,0,0);
   if (metonic) {
     var diff = Math.round((out - new Date(1999, 4, 22)) / 8.64e7);
     output = new colignyDate(4999, 0, 1, true);
