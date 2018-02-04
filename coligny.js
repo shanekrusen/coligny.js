@@ -2162,6 +2162,8 @@ Date.prototype.toColignyDate = function(metonic) {
     output = new colignyDate(4998, 0, 1);
   }
 
+  diff < 0 ? diff += 1 : diff -= 1;
+
   return output.calcDays(diff);
 }
 
