@@ -16,6 +16,11 @@ function colignyMonth(name, days) {
   this.name = name;
   this.days = days;
   this.index = 0;
+  if (this.days === 30) {
+    this.omen = "MAT";
+  } else {
+    this.omen = "ANM";
+  }
 }
 
 function colignyYear(year, metonic) {
