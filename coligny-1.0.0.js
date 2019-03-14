@@ -2160,6 +2160,9 @@ colignyDate.prototype.toGregorianDate = function() {
 
 Date.prototype.toColignyDate = function(metonic) {
   var out = new Date(this)
+  if (out.getHours >= 6) {
+    var tomorrow = true;   
+  }
   out.setHours(0,0,0,0);
   if (metonic) {
     var diff = Math.round((out - new Date(1999, 4, 22)) / 8.64e7);
@@ -2168,8 +2171,12 @@ Date.prototype.toColignyDate = function(metonic) {
     var diff = Math.round((out - new Date(1998, 4, 3)) / 8.64e7);
     output = new colignyDate(4998, 0, 1);
   }
-
-  return output.calcDays(diff);
+    
+  if (tomorrow === true) {
+    return output.calcDays(diff + 1); 
+  } else {
+    return output.calcDays(diff);  
+  }
 }
 
 
