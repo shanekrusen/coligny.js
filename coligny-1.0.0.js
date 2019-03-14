@@ -2160,7 +2160,7 @@ colignyDate.prototype.toGregorianDate = function() {
 
 Date.prototype.toColignyDate = function(metonic) {
   var out = new Date(this)
-  if (out.getHours >= 6) {
+  if (out.getHours >= 18) {
     var tomorrow = true;   
   }
   out.setHours(0,0,0,0);
