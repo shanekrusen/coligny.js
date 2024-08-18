@@ -2062,7 +2062,7 @@ colignyDate.prototype.calcDays = function(add) {
       output = new colignyDate(output.year - 1, newLength - 1, 
                output.day + output.month.days, output.metonic);
     } else {
-      output = new colignyDate(output.year, output.months.index - 1,
+      output = new colignyDate(output.year, output.month.index - 1,
                output.day + output.month.days, output.metonic);
     }
   }
